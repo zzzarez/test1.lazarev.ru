@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+ <params addpath="/administrator/components/com_advancedordermanager/elements">
+  <param name="productskutype" type="radio" default="0" label="Product SKU" description="productsku">
+   <option value="0">Text Box</option>
+   <option value="1"> All</option>
+  </param>
+		<param name="producttype" type="radio" default="0" label="Product Name" description="product">
+			<option value="0">Text Box</option>
+			<option value="1"> All</option>
+		</param>
+		<param name="paymentmethodtype" type="radio" default="0" label="Payment Method" description="Payment">
+			<option value="0">Enabled</option>
+			<option value="1"> All</option>
+		</param>
+	<param type="spacer" default="&lt;b&gt;Please refresh the page after saving the parameter &lt;/b&gt;" />
+
+ </params>
+</config>

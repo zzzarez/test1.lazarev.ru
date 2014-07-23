@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0">
+    <name>VM Reports</name>
+    <creationDate>14. December 2010</creationDate>
+    <author>ARTIO s.r.o</author>
+    <authorEmail>info@artio.net</authorEmail>
+    <authorUrl>http://www.artio.net</authorUrl>
+    <copyright>Copyright (C) 2010 ARTIO s.r.o. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html</license>
+    <version>1.0.1</version>
+    <description>
+    ARTIO VM Reports showing business reports from VirtueMart as flash charts. All common business indexes and trade references are available.
+    Charts are rendered via 
+    &lt;a href='http://www.artio.net/joomla-extensions/fusioncharts-for-joomla' target='_blank' &gt;ARTIO FusionCharts&lt;/a&gt;
+    component.
+    </description> 
+    <vmreportslink>http://www.artio.net/virtuemart-tools/vm-reports</vmreportslink>
+    <forum>http://www.artio.net/support-forums/support-forums/vm-reports</forum>
+    <paidsupport>http://www.artio.net/e-shop/support-services</paidsupport>
+    <productpage>http://www.artio.net/virtuemart-tools/vm-reports</productpage>
+    <administration>
+   		<languages folder="language/admin">
+      		<language tag="en-GB">en-GB.com_vmreports.ini</language>    
+    	</languages>
+    	<menu img="../administrator/components/com_vmreports/assets/images/icon-16-vmreports.png">ARTIO VM Reports</menu>
+    	<submenu>
+      		<menu img="../administrator/components/com_vmreports/assets/images/icon-16-chart.png" link="option=com_vmreports&amp;page=orders">Statistics</menu>
+      		<menu img="../administrator/components/com_vmreports/assets/images/icon-16-chart.png" link="option=com_vmreports&amp;page=topProducts">Top lists</menu>
+      		<menu img="../administrator/components/com_vmreports/assets/images/icon-16-config.png" link="option=com_vmreports&amp;page=settings">Other</menu>
+    	</submenu>
+    	<files folder="admin">
+    		<folder>helpers</folder>
+    		<folder>assets</folder>
+    		<folder>charts</folder>
+    		<folder>models</folder>
+    		<folder>views</folder>
+			<filename>config.php</filename>
+			<filename>menu.xml</filename>
+			<filename>controller.php</filename>
+			<filename>vmreports.php</filename>
+			<filename>index.html</filename>
+		</files>    	
+    </administration>
+</install>

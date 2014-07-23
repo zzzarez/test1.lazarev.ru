@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" client="administrator" method="upgrade" version="1.5.0" position="cpanel">
+	<name>Joomla Statistics Module</name>
+	<author>iMaQma</author>
+	<creationDate>May 2011</creationDate>
+	<copyright>Copyright (C) 2006 - 2011 Components Lab, Lda. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@imaqma.com</authorEmail>
+	<authorUrl>www.imaqma.com</authorUrl>
+	<version>1.1.0</version>
+	<description>This module shows statistical information about your website users.</description>
+	
+	<files>
+		<filename module="mod_multi_statistics_administration_module">mod_multi_statistics_administration_module.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+	
+	<languages>
+		<language tag="en-GB">en-GB.mod_multi_statistics_administration_module.ini</language>
+	</languages>
+	
+	<params>
+		<param name="dimension" type="list" default="0" label="What to show?" description="Select what you want this module to show">
+			<option value="all">All</option>
+			<option value="users">Users only</option>
+			<option value="helpdesk">Helpdesk only</option>
+			<option value="store">Store only</option>
+	  	</param>
+		<param name="cache" type="list" default="0" label="Caching" description="Select whether to cache the content of this module">
+			<option value="0">Never</option>
+	  	</param>
+	</params>
+</install>
+

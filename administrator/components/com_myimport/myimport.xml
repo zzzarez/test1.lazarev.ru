@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.3">
+	<name>MyImport</name>
+	<creationDate>13/02/2009</creationDate>
+	<author>Aleksandr Rebrov(dinox)</author>
+	<copyright>(C) 2006 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>webmaster@webplaneta.com.ua</authorEmail>
+	<authorUrl>www.webplaneta.com.ua</authorUrl>
+	<version>1.5.0</version>
+	<description>Компонент импорта/экспорта товаров в Virtuemart 1.1.x для Joomla 1.5.x</description>
+
+	<files>
+		<filename>myimport.php</filename>
+	</files>
+	<install>
+	</install>
+	<administration>
+		<menu>MyImport</menu>
+		<submenu>
+			<menu link="option=com_myimport&amp;task=import">Import</menu>
+			<menu link="option=com_myimport&amp;task=export">Export</menu>
+			<menu link="option=com_myimport&amp;task=about">About</menu>
+		</submenu>
+		<files>
+			<filename>admin.myimport.php</filename>
+			<filename>about.myimport.php</filename>
+			<filename>toolbar.myimport.php</filename>
+			<filename>toolbar.myimport.html.php</filename>
+			<filename>images/addedit.png</filename>
+			<filename>images/backup.png</filename>
+			<filename>images/info.png</filename>
+			<filename>images/index.html</filename>
+		</files>
+	</administration>
+
+</install>

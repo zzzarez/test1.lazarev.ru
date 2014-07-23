@@ -1,0 +1,289 @@
+<?php
+if (!defined('_VALID_MOS') && !defined('_JEXEC')) die('Direct Access to ' . basename(__FILE__) . ' is not allowed.');
+/**
+ *
+ * @version $Id: shop.downloads.php 1578 2008-11-29 23:08:19Z soeren_nb $
+ * @package VirtueMart
+ * @subpackage html
+ * @copyright Copyright (C) 2004-2008 soeren - All rights reserved.
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
+ * VirtueMart is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ * See /administrator/components/com_virtuemart/COPYRIGHT.php for copyright notices and details.
+ *
+ * http://virtuemart.net
+ */
+
+
+mm_showMyFileName(__FILE__);
+
+$did = vmGet($_GET, 'download_id');
+
+
+
+$itd = 36;
+$video_url = $mm_action_url . "index.php?option=com_virtuemart&page=shop.downloads&Itemid=" . $itd . "&download_id=" . $did;
+
+$q = "SELECT `download_id`, `file_name`,order_id  FROM #__{vm}_product_download WHERE download_id='" . $did . "'";
+//echo $q;
+$db_did = new ps_DB;
+$db_did->query($q);
+//print_r($db_did);
+$db_did->next_record();
+
+$fname = $db_did->f("file_name");
+
+$ordid=$db_did->f("order_id");
+
+
+
+$isView1 = false;
+$isView2 = false;
+if (strpos($fname, "_view"))
+{
+    $isView = true;
+}
+//echo $fname;
+$isView2 = false;
+if (strpos($fname, "_view1"))
+{
+    $isView1 = true;
+}
+if (strpos($fname, "_view2"))
+{
+    $isView2 = true;
+}
+//echo  "qqq==".$fname."- ".$isView;
+$isZayac1=false;
+$isZayac2=false;
+
+$isOldTicket=false;
+if(intval($ordid.int)<=45452){
+    //echo "<b style='color: #ff0000;'>Ваш билет на старую дату!</b>";
+   // $isOldTicket=true;
+}
+
+
+if ($isView) {
+    $db_chk = new ps_DB;
+    $timeadd = time() + (3.5 * 60 * 60);//1 час
+    $indate=date("Y-m-d H:i:s",$timeadd );
+    $q="delete FROM current_downloadid WHERE intime<'$indate'";
+    $db_chk->query($q);
+    $q="SELECT downloadid FROM current_downloadid WHERE downloadid='$did'";
+    $db_chk->query($q);
+    if ($db_chk->next_record())
+    {
+        if($_COOKIE['f81ef6h']==$did)
+        {
+            //echo "same";
+        }
+        else
+        {
+           // echo "<b style='color: #ff0000;'>Внимание !!! Ваш билет уже используется. Обратитесь в службу поддержки.</b>";
+            //echo "...";
+           // $isZayac=true;
+        }
+    }
+    else
+    {
+        if($isView1)
+        {
+            $q="INSERT INTO current_downloadid (downloadid,day) VALUES('$did',8)";
+            $db_chk->query($q);
+
+            $q="INSERT INTO current_down_all (downloadid,day) VALUES('$did',8)";
+            $db_chk->query($q);
+
+        }
+        if($isView2)
+        {
+            $q="INSERT INTO current_downloadid (downloadid,day) VALUES('$did',9)";
+            $db_chk->query($q);
+
+            $q="INSERT INTO current_down_all (downloadid,day) VALUES('$did',9)";
+            $db_chk->query($q);
+
+        }
+        setcookie("f81ef6h",$did,time()+1800);
+    }
+////////////check if user already view
+    ?>
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+<!--<style type="text/css">@import "jquery.countdown.css";</style>-->
+<!--<script type="text/javascript" src="jquery.countdown.js"></script>-->
+<!--<script type="text/javascript" src="jquery.countdown-ru.js"></script>-->
+
+<!--                Таймер                  <script type="text/javascript">-->
+<!--    $(function () {-->
+<!--        var austDay = new Date();-->
+<!--        austDay = new Date(2012, 9, 21,14);-->
+<!--        $('#defaultCountdown').countdown({until: austDay});-->
+<!--        $('#year').text(austDay.getFullYear());-->
+<!--    });-->
+<!--</script>-->
+
+<!--<script type="text/javascript">-->
+<!--//    var flashvars = {"comment":"IT LEADER","st":"http://media.webinar.w2c.ru/video4-1924.txt","file":"rtmp://stream.webinar.ru:80/webinar-live/2","link":"http://uppod.ru/vftawsitr"};var params = {wmode:"transparent", allowFullScreen:"true", allowScriptAccess:"always",id:"videoplayer16743"}; new swfobject.embedSWF("http://media.webinar.w2c.ru/uppod.swf", "videoplayer16743", "700", "560", "9.0.115.0", false, flashvars, params);-->
+<!--</script>-->
+</head>
+<h1 align="center">Семинар Лазарева С.Н. <br> в режиме онлайн-трансляции<br><h1>
+<h2 align="center">
+    <b>
+        <?php
+                $isv="14 апреля ";
+                $isvy="(второй день)<br> ";
+            if($isView1)
+            {
+                $isv="13 апреля ";
+                $isvy="(первый день)<br> ";
+            }
+                echo $isv.$isvy;
+        ?></b>
+
+</h2>
+
+ <b>Семинар Лазарева С.Н.<br>
+     г. Санкт-Петербург, <?php  echo $isv;  ?> 2013 года <?php  echo $isvy;  ?>
+     11.00 – 15.00 по московскому времени<br>
+ </b><br>
+<br><br>
+    Онлайн-трансляция мероприятия начнется за 30 минут до начала семинара, чтобы вы смогли еще раз проверить и настроить свой компьютер.
+<br>
+
+<!--<h1 align="left">Презентация новой книги <br>в режиме онлайн-трансляции </h1><br><br>-->
+<!--<h4>Презентация новой книги "Опыт выживания. Часть 6"<br>-->
+<!--    г. Москва, 21 октября 2012 года<br>-->
+<!--    14.00-16.00<br>-->
+<!--        <h4><br><br>-->
+<!--<h4>Онлайн-трансляция презентации начнется в 14.00 по московскому времени.</h4>-->
+<!--<br>-->
+<!--    <b>Внимание!!! <br>Если трансляция не начинается, нажмите на кнопку "Play" (треугольная кнопка слева внизу окна плеера),<br>или обновите окно браузера.</b>-->
+<!--<h3>До начала трансляции осталось:</h3>-->
+<!--<div id="defaultCountdown"></div>-->
+<br>
+<!--    <img src="/images/zag.jpg" alt="">-->
+<?php
+   if(!$isOldTicket){
+
+        if(!$isZayac){//Сам плеер some player :)
+            if($isView1)
+            {// 8го декабря
+                ?>
+                <br><br><br><br>
+<!--                <iframe src="http://test.octopus.comdi.net/broadcast/player/stream/?eventKey=wbm3lwv4sh4osgnugp65" width="565" height="350" frameborder="0" scrolling="no"></iframe>-->
+                <iframe src="http://broadcast.comdi.com/broadcast/player/stream/?eventKey=hm0weygwnjh161ee13xi" width="565" height="350" frameborder="0" scrolling="no"></iframe>
+
+                <?php
+            }
+            else
+            {
+?>
+                <br><br><br><br>
+<!--                <iframe src="http://test.octopus.comdi.net/broadcast/player/stream/?eventKey=m3mpeu8inux4jox3zwsi" width="565" height="350" frameborder="0" scrolling="no"></iframe>-->
+                <iframe src="http://broadcast.comdi.com/broadcast/player/stream/?eventKey=vfig7kdolce73cirdx3v" width="565" height="350" frameborder="0" scrolling="no"></iframe>
+
+                <?php
+            }
+        }
+   }
+    ?>
+<br><br><br>
+    <p><b>Как понять, началась ли трансляция?<br> Что делать если трансляция остановилась?</b></p>
+<p>Если трансляция не началась автоматически, Вам следует обновить страницу (для пользователей Windows: нажать кнопку F5 на клавиатуре; либо нажать на закругленную стрелочку в строке набора веб-адреса) или нажать кнопку play в виде треугольника на видео плеере.</p>
+    <br>    <p><b>Плеер выдает сообщение "Не удается подключиться к медиа серверу. Проверьте сетевые настройки"</b></p>
+    <p>Обновите, пожалуйста, страницу. Рекомендуем самые свежие версии браузеров и Adobe Flash Player.</p>
+    <br><p><b>Почему не получается посмотреть трансляцию?</b></p>
+<p>Для просмотра трансляций необходимо, чтобы у Вас была установлена версия Adobe Flash Player 11.1.0 или выше. Установить Adobe Flash Player Вы можете по ссылке: http://get.adobe.com/ru/flashplayer/
+    Также, проверьте, пожалуйста, проигрывается ли у вас видео на сайтах
+    <a class="blue_link" href="http://www.youtube.com">http://www.youtube.com</a> или <a class="blue_link" href="http://vc.com">http://vc.com</a>.
+    Если нет, то причина в отсутствии видеокодеков. Вы можете скачать их на сайте:
+    <a class="blue_link" href="/files/klitecodecpack.exe">K-Lite Codec pack</a>
+    Также причиной может быть медленное интернет соединение.
+<!--    Также, проверьте, пожалуйста, проигрывается ли у вас видео на сайтах <a class="blue_link" href="http://www.youtube.com">http://www.youtube.com</a> или <a class="blue_link" href="http://vk.com">http://vk.com</a>.-->
+<!--    Если нет, то причина в отсутствии видеокодеков. Вы можете скачать их здесь: <a class="blue_link" href="/files/klitecodecpack.exe">K-Lite Codec pack</a>.  Также причиной может быть медленное интернет соединение.-->
+</p>
+    <br><p><bКакая скорость интернет соединения необходима для проведения трансляции?</b></p>
+    <p>Желательная скорость для просмотра трансляции от 1 Мбит исходящего трафика.</p>
+    <br><p><b>Что делать, если вышеперечисленные пункты не помогли?</b></p>
+
+Напишите в <a class="blue_link" href="mailto:shop@lazarev.ru">службу поддержки</a><br> или звоните по телефону: <b>+7 968 541 92 46</b><br><br>
+
+
+<p align="left"><i>Вы можете заранее провести тест на своем компьютере на наличие последней версии Adobe Flash Player
+    Если видео работает, то проблем с просмотром трансляции не должно возникнуть.
+</i><br><br>
+
+    <iframe width="540" height="300" src="http://www.youtube.com/embed/2fzGKSOmFbw?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+<?php
+    }
+?>
+
+<?php
+//}
+//echo "aaa=".$mm_action_url ."index.php?option=com_virtuemart&page=shop.downloads&Itemid=".$itd."&download_id=".$did;
+$mainframe->setPageTitle($VM_LANG->_('PHPSHOP_DOWNLOADS_TITLE'));
+
+//&&(!$isView)
+if (!$isView) {
+    if ($ps_function->userCanExecuteFunc('downloadRequest')) {
+        ?>
+
+    <h3 style="color: #808080;font-size: 24px;">Идет загрузка файла <?php echo $fname; ?> </h3>
+<!--    <img src="--><?php //echo VM_THEMEURL ?><!--images/downloads.gif" alt="downloads" border="0" align="middle"/>-->
+
+    <br/>
+    <br/>
+    <?php
+
+        if (ENABLE_DOWNLOADS == '1') {
+
+            $filename="/var/www/shop.lazarev.ru/logl.txt";
+            $handle = fopen($filename, "a");
+            $strtolog="shop.download:::did = ".vmGet($_GET, 'download_id')."\n";
+            if (is_writable($filename))
+                $err= fwrite($handle,$strtolog);
+            fclose($handle);
+
+            ?>
+        <form method="get" action="<?php echo $mm_action_url ?>index.php" name="downloadForm" id="dform" style="visibility: hidden;">
+            <p>Пожалуйста, введите код доступа для скачивания, <br>который Вы получили по e-mail и нажмите 'Скачать'.</p>
+
+            <div align="left">
+                <input type="text" class="inputbox"
+                       value="<?php echo htmlspecialchars(vmGet($_GET, 'download_id'), ENT_QUOTES) ?>" size="32"
+                       name="download_id"/>
+                <br/><br/>
+                <input type="submit"
+                       onclick="if( document.downloadForm.download_id.value &lt; 12) { alert('<?php echo $VM_LANG->_('CONTACT_FORM_NC', false) ?>');return false;} else return true;"
+                       class="button" value="<?php echo $VM_LANG->_('PHPSHOP_DOWNLOADS_START') ?>"/>
+            </div>
+            <input type="hidden" name="func" value="downloadRequest"/>
+            <input type="hidden" name="option" value="<?php echo VM_COMPONENT_NAME ?>"/>
+            <input type="hidden" name="page" value="shop.downloads"/>
+        </form>
+        <?php
+        }
+    }
+    else {
+        $vmLogger->info($VM_LANG->_('NOT_AUTH', false)
+                . ($auth['user_id'] ? '' : ' ' . $VM_LANG->_('DO_LOGIN', false))
+        );
+    }
+}
+?>
+
+<?php  if ($_GET['func']!='downloadRequest') { ?>
+
+
+<script language="javascript">
+    function fff() {
+            var form1 = document.getElementById("dform");
+            form1.submit();
+    }
+    window.onload = fff;
+ </script>
+
+<?php }?>

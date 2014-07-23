@@ -1,0 +1,81 @@
+
+<install type="component" version="1.5.0" method="upgrade">
+	<name>P2DXT</name>
+	<creationdate>25-09-2010</creationdate>
+	<author>Oli Merten</author>
+	<copyright>(c) 2008 - 2010 JoomlaXT</copyright>
+	<authoremail>webmaster@joomlaxt.com</authoremail>
+	<authorurl>http://www.joomlaxt.com</authorurl>
+	<version>1.00.14</version>
+	<description><![CDATA[Start making business with simple paypal integration<br />Installation created with <a href='http://www.joomlaxt.com'>InstallXT!</a>]]></description>
+	<installfile>admin/install.p2dxt.php</installfile>
+	<uninstallfile>admin/uninstall.p2dxt.php</uninstallfile>
+	<params>
+		<param name="Item ID" type="text" default="" label="" description="Id of the item you want to sell" />
+	</params>
+	<files folder="site">
+		<filename>controllers/popup.php</filename>
+		<filename>data/index.html</filename>
+		<filename>helper.p2dxt.php</filename>
+		<filename>models/donation.php</filename>
+		<filename>models/index.html</filename>
+		<filename>models/minvalue.php</filename>
+		<filename>models/popup.php</filename>
+		<filename>p2dxt.js</filename>
+		<filename>p2dxt.php</filename>
+		<filename>views/default/metadata.xml</filename>
+		<filename>views/index.html</filename>
+		<filename>views/popup/index.html</filename>
+		<filename>views/popup/tmpl/_donation.php</filename>
+		<filename>views/popup/tmpl/_master.php</filename>
+		<filename>views/popup/tmpl/_minvalue.php</filename>
+		<filename>views/popup/view.html.php</filename>
+		<filename>views/popup/view.json.php</filename>
+	</files>
+	<languages folder="site/language/">
+		<language tag="en-GB">en-GB/en-GB.com_p2dxt.ini</language>
+	</languages>
+	<administration>
+		<menu>P2DXT</menu>
+		<files folder="admin">
+			<filename>admin.p2dxt.php</filename>
+			<filename>admin/index.html</filename>
+			<filename>class.p2dxt.php</filename>
+			<filename>controllers/ajax.php</filename>
+			<filename>controllers/cpanel.php</filename>
+			<filename>images/article.png</filename>
+			<filename>inc/com_p2dxtlog.txt</filename>
+			<filename>inc/p2dxt.php</filename>
+			<filename>inc/tables.p2dxt.php</filename>
+			<filename>index.html</filename>
+			<filename>installer.class.php</filename>
+			<filename>main.p2dxt.php</filename>
+			<filename>models/ajaxitem.php</filename>
+			<filename>models/cpanel.php</filename>
+			<filename>models/donation.php</filename>
+			<filename>models/index.html</filename>
+			<filename>models/upgrade.php</filename>
+			<filename>script/p2dxt.admin.item.js</filename>
+			<filename>script/p2dxt.admin.js</filename>
+			<filename>views/ajaxcp/tmpl/default.php</filename>
+			<filename>views/ajaxcp/view.json.php</filename>
+			<filename>views/ajaxitem/tmpl/_donation2.php</filename>
+			<filename>views/ajaxitem/tmpl/_donationoff.php</filename>
+			<filename>views/ajaxitem/tmpl/_donationon.php</filename>
+			<filename>views/ajaxitem/view.json.php</filename>
+			<filename>views/cpanel/tmpl/_addinfo.php</filename>
+			<filename>views/cpanel/tmpl/_banner.php</filename>
+			<filename>views/cpanel/tmpl/_dashboard.php</filename>
+			<filename>views/cpanel/tmpl/_default.php</filename>
+			<filename>views/cpanel/tmpl/_items.php</filename>
+			<filename>views/cpanel/tmpl/_master.php</filename>
+			<filename>views/cpanel/tmpl/_version.php</filename>
+			<filename>views/cpanel/view.html.php</filename>
+			<filename>views/index.html</filename>
+			<filename>com_p2dxtupd.php</filename>
+		</files>
+		<languages folder="admin/language/">
+			<language tag="en-GB">en-GB/en-GB.com_p2dxt.ini</language>
+		</languages>
+	</administration>
+</install>

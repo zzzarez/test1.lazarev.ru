@@ -1,0 +1,76 @@
+<?php
+/**
+ * @copyright   Copyright (C) 2005 - 2009 RocketTheme, LLC - All Rights Reserved.
+ * @license     GNU/GPL, see LICENSE.php
+**/
+defined( '_JEXEC' ) or die( 'Restricted access' );
+?>
+<?php echo '<?xml version="1.0" encoding="utf-8"?' .'>'; ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:jdoc="http://www.w3.org/1999/XSL/Transform" xml:lang="{LANG_TAG}"
+      lang="{LANG_TAG}" dir="{LANG_DIR}">
+<head>
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/shop/css/main.css" type="text/css" />
+</head>
+<body align="center">
+
+<div class="top">
+    <div class="top_img"><img src="images\shop_addr.png"></div>
+    <div class="shop_name">Интернет-магазин  Лазарева С.Н.</div>
+    <div class="top_img"><img src="images\shop_addr.png"></div>
+</div>
+<div class="main rad">
+    <div class="leftWrapper">
+        <div class="logo radgrad">
+           <a href=""> <img src="images/logo.png" alt="Интернет-магазин  Лазарева С.Н."></a>
+        </div>
+        <div class="menu">
+            <jdoc:include type="modules" name="left" style="none" >
+        </div>
+        <div class="search">
+            search
+        </div>
+    </div>
+    <div class="mainWrapper">
+        <div class="leftWrapper">
+            <div class="top_catalog">
+                top_catalog
+            </div>
+            <div class="main_about">
+                main_about
+            </div>
+        </div>
+        <div class="rightWrapper">
+            <div class="login">
+                login
+
+            </div>
+            <div class="cart">
+                cart
+
+            </div>
+        </div>
+        <div class="main_news">
+            main_news
+        </div>
+        <div class="main_special">
+            main_special
+        </div>
+        <div class="down_books">
+            down_books
+        </div>
+        <div class="down_video">
+            down_video
+        </div>
+        <div class="down_audio">
+            down_audio
+        </div>
+    </div>
+    <div class="footer">
+        footer
+
+    </div>
+</div>
+
+</body>
+</html>  

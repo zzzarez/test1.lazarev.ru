@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+        <view title="PURCHASE ITEM">
+                <message><![CDATA[PURCHASE ITEM DESC]]></message>
+        </view>
+        <state>
+                <name>PURCHASE ITEM</name>
+                <description>PURCHASE ITEM DESC</description>
+                <params>
+<param name="p2did" 
+type="text" 
+default="" 
+label="Item ID" 
+description="ID of the Item to sell">
+</param>                 
+                </params>
+        </state>
+        
+</metadata>

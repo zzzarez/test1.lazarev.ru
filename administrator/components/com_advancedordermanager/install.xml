@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0">
+	<name>Advanced Order Manager</name>
+	<!-- The following elements are optional and free of formatting conttraints -->
+	<creationDate>2011-06-07</creationDate>
+	<author>JM-Experts!</author>
+	<authorEmail>info@jm-experts.com</authorEmail>
+	<authorUrl>http://www.jm-experts.com</authorUrl>
+	<copyright>Copyright JM-Experts</copyright>
+	<license>Commercial Product</license>
+	<!--  The version string is recorded in the components table -->
+	<version>1.0.4</version>
+	<!-- The description is optional and defaults to the name -->
+	<description><![CDATA[
+		<h2><a target="_blank" href="http://www.jm-experts.com">JM-Experts Advanced Order Manager for Virtuemart!</a></h2><a target="_blank" href="http://www.jm-experts.com"><img style="float:right;background:#fff;border:1px solid #ccc;padding:2px;margin:0 0 8px 8px;" src="../administrator/components/com_advancedordermanager/icons/advordermanager.png" border="0" alt="Advanced Order Manager" /></a><b>Advanced Order Manager </b>Component lets you manage your Virtuemart orders in a better manner.Using this extension, the possiblities for searching your virtuemart orders are limitless. You can sort your orders by the following options:<br />
+<ul>
+<li>Order number</li>
+<li>Customer First/last name</li>
+<li>Email Address</li>
+<li>Date range</li>
+<li>Username</li>
+<li>Company</li>
+<li>Product Name/SKU</li>
+<li>Payment Method</li>
+<li>Address, State, City, Country or Zip</li>
+<li>Coupon/Discount code</li>
+<li>Order status</li>
+<li>Export Feature</li>
+</ul>
+
+<p>You may also want to check out the following resources:<ul> <li><a target="_blank" title="Visit JM-Experts!" href="http://www.jm-experts.com">Learn more about all JM-Experts! Extensions and Joomla Services!</a></li><li>Please show your support in our work by rating and/or commenting on this extension at the official <a target="_blank" href="http://extensions.joomla.org/extensions/15380/details">Joomla! Extensions</a> website.</li></ul><b>Advanced Order Manager</b> is a <a target="_blank" href="http://www.joomla.org/">Joomla!</a> Component developed by <a target="_blank" title="Visit JM-Experts!" href="http://www.jm-expets.com">JM-Experts!</a>, released under the <a target="_blank" title="GNU General Public License" href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>.<br /><br />Copyright  2006 - 2011 JM-Experts!"</p>
+	]]>
+		</description>
+        
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">install.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">uninstall.sql</file>
+		</sql>
+	</uninstall>	
+
+	
+	<files folder="site">
+
+	</files>
+	<administration>
+		
+	<menu  img="components/com_advancedordermanager/icons/calculator.png">Advanced Order Manager</menu>
+		
+	
+		
+		<files folder="admin">
+		<filename>install.sql</filename>
+			<filename>uninstall.sql</filename>
+			<filename>controller.php</filename>
+			<filename>config.xml</filename>
+			<filename>advancedordermanager.php</filename>
+			<filename>index.html</filename>
+			<folder>views</folder>
+			<folder>tables</folder>
+			<folder>css</folder>
+			<folder>icons</folder>
+			<folder>models</folder>
+			<folder>controllers</folder>
+		</files>
+	</administration>
+</install>

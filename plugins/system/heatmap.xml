@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system" method="upgrade">
+    <name>System - Heatmap</name>
+    <author>Edvard Ananyan, Simon Poghosyan</author>
+    <creationDate>August 2011</creationDate>
+    <copyright>Copyright (C) 2008 - 2012 Edvard Ananyan, Simon Poghosyan. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl.html GNU/GPL</license>
+    <authorEmail>simon@2glux.com</authorEmail>
+    <authorUrl>http://2glux.com</authorUrl>
+    <version>0.9.4</version>
+    <description>PLG_HEATMAP_DESCRIPTION</description>
+
+    <files>
+        <filename plugin="heatmap">heatmap.php</filename>
+        <folder>heatmap</folder>
+    </files>
+
+    <params></params>
+
+    <languages>
+        <language tag="en-GB">en-GB.plg_system_heatmap.ini</language>
+    </languages>
+</install>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system" method="upgrade">
+  <name>RemoveDoubleBreadcrumbs</name>
+  <author>WebRaket</author>
+  <creationDate>Juli 2010</creationDate>
+  <copyright>Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <authorEmail>info@webraket.nl</authorEmail>
+  <authorUrl>https://webraket.nl</authorUrl>
+  <version>1.0</version>
+  <description>
+  Joomla adds the current menuitem to the pathway.
+  VirtueMart adds the current categoryname.
+
+  When your VMcategory menuitem has the same name as the VMcategory you'll end up with double items in the breadcrumbs module.
+
+  This plugin removes all duplicate pathway items by name.
+
+
+  #Note: 
+
+  The names of the VMcategory menuitems must exactly match with the VMcategory's.
+
+  Make sure all (sub)menuitems have unique names to prevent any problems.
+  </description>
+  <files>
+    <filename plugin="removedoublebreadcrumbs">removedoublebreadcrumbs.php</filename>
+  </files>
+</install>

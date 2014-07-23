@@ -1,0 +1,176 @@
+<?php
+/**
+* iMaQma Joomla Statistics Administration Module
+* www.imaqma.com
+*
+* @package iMaQma Joomla Statistics Administration Module
+* @copyright (C) 2006-2010 Components Lab, Lda.
+* @license GNU/GPL
+*
+**/
+
+defined( '_JEXEC' ) or die( 'Restricted access' );
+?>
+
+<table class="adminlist">
+<tbody>
+<tr style="background-color:#efefef;">
+	<th colspan="2" class="title" style="font-size:14px;">
+		<strong><?php echo JText::_( 'USERS' ); ?> <a href="index.php?option=com_users"><img src="images/expandall.png" alt="" border="0" /></a></strong>
+	</th>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'REGISTERED' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $registered_users;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'VISITORS' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $current_visitors;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'REG_THIS_MONTH' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $reg_this_month;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'REG_LAST_MONTH' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $reg_last_month;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'REG_THIS_YEAR' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $reg_this_year;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'REG_LAST_YEAR' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $reg_last_year;?>
+	</td>
+</tr>
+
+<?php if( $digistore || $virtuemart || $redshop ) : ?>
+<tr style="background-color:#efefef;">
+	<th colspan="2" class="title" style="font-size:14px;">
+		<strong><?php echo JText::_( 'ORDERS' ); ?> <i>(<?php echo $store; ?>)</i> <a href="index.php?option=com_<?php echo $store; ?>"><img src="images/expandall.png" alt="" border="0" /></a></strong>
+	</th>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'ORDERS_TODAY' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $orders_today;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'ORDERS_THIS_MONTH' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $orders_this_month;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'ORDERS_LAST_MONTH' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $orders_last_month;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'ORDERS_THIS_YEAR' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $orders_this_year;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'ORDERS_LAST_YEAR' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $orders_last_year;?>
+	</td>
+</tr>
+<?php endif; ?>
+
+<?php if( $helpdesk ) : ?>
+<tr style="background-color:#efefef;">
+	<th colspan="2" class="title" style="font-size:14px;">
+		<strong><?php echo JText::_( 'HELPDESK' ); ?> <a href="index.php?option=com_maqmahelpdesk"><img src="images/expandall.png" alt="" border="0" /></a></strong>
+	</th>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'HELPDESK_OPEN' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $tickets_pending;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'HELPDESK_TODAY' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $tickets_today;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'HELPDESK_THIS_MONTH' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $tickets_this_month;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'HELPDESK_LAST_MONTH' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $tickets_last_month;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'HELPDESK_THIS_YEAR' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $tickets_this_year;?>
+	</td>
+</tr>
+<tr>
+	<td style="padding-left:15px;">
+		<?php echo JText::_( 'HELPDESK_LAST_YEAR' ); ?>
+	</td>
+	<td style="text-align:right;font-size:16px;font-weight:bold;padding-right:10px;">
+		<?php echo $tickets_last_year;?>
+	</td>
+</tr>
+<?php endif; ?>
+
+</tbody>
+</table>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<group name="menu" title="STATISTICS">
+		<link title="ORDERS" page="orders" />
+		<link title="ORDERS_STATUS" page="ordersStatus" />
+    	<link title="USER_GROUPS" page="userGroups" />
+    	<link title="PRODUCTS_SALEABILITY" page="productsSaleability" />
+    	<link title="PAYMENT_METHODS" page="paymentMethods" />
+    	<link title="CATEGORIES" page="categories" />
+	</group>
+	<group name="menu" title="TOP_LISTS">
+		<link title="TOP_PRODUCTS" page="topProducts" />
+    	<link title="TOP_USERS" page="topUsers" />
+    	<link title="TOP_CATEGORIES" page="topCategories" />
+    	<link title="ORDERS_BY_COUNTRY" page="ordersByCountry" />
+	</group>
+	<group name="menu" title="OTHER">
+		<link title="SETTINGS" page="settings" />
+		<link title="ABOUT" page="about" />
+	</group>
+</menu>

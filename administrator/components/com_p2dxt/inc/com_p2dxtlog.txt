@@ -1,0 +1,67 @@
+1. Changelog
+============
+This is a non-exhaustive (but still near complete) changelog for P2DXT, 
+including beta and release candidate versions.
+Our thanks to all those people who've contributed bug reports and 
+code fixes.
+
+Legend: 
+# -> Bug Fix
++ -> Addition
+! -> Change
+- -> Removed
+
+--------------------------------------------------
+P2DXT 1.00.14
+--------------------------------------------------
+# Improved language support
++ Variables in confirmation text
++ added Donation functionality
++ added "minimum amount" functionality 
++ beautified admin screen
++ added version check
+# fixed media manager button
++ added option to define Popup size (for donation)
++ added option to define tax as a percentage
++ added keywords (meta tags)
+
+--------------------------------------------------
+P2DXT 1.00.13
+--------------------------------------------------
++ Added configurable "Pay Now Button"
++ added drop down for currency and locale
++ added filter for timeframe in transaction list
+--------------------------------------------------
+P2DXT 1.00.12
+--------------------------------------------------
+! improved installer
+# fixed filter (with alpahnumeric values) in transaction list
+--------------------------------------------------
+P2DXT 1.00.11
+--------------------------------------------------
++ added code to the bot to prevent emailcloaking
++ added "product id" for items
++ added "shipping address required" setting
++ added "maximum no. of downloads / user" setting 
++ added "maximum no. of total downloads" setting 
+! beautified administrator
++ added language file for frontend
++ added filter & sort options for transaction list
+! "cancel" in paypal no always returns to the initiating page
+--------------------------------------------------
+P2DXT 1.00.10
+--------------------------------------------------
++ added "animated download button"
++ added downloadcounter in admin
+# corrected invalid HTML
++ added check for amount and currency
++ added IP to transaction table
+--------------------------------------------------
+P2DXT 1.00.09
+--------------------------------------------------
+# improved error handling
+--------------------------------------------------
+P2DXT 1.00.08
+--------------------------------------------------
+# fixed "This recipient does not accept payments denominated in..." when currency is in lower case
+
